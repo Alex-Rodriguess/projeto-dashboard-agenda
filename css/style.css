@@ -1,0 +1,313 @@
+/*
+ Created on : 03/04/2014, 17:07:24
+ Author     : fernando-dell
+ */
+body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    color: #2c3e50;
+    -webkit-font-smoothing: antialiased;
+}
+
+* {
+    font-size: 11px;
+}
+
+.table > tbody > tr > th, .table-bordered > tbody > tr > th {
+    font-weight: normal;
+}
+
+/*Form de login*/
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+[class^="col-"] {
+    /*background-color: #f7f7f7;*/
+    /*border: red 1px solid;*/
+    margin-bottom: 10px;
+}
+
+.form {
+    margin: 10px 0;
+}
+
+.form-control {
+    font-size: 12px;
+    height: 28px;
+}
+
+.btn {
+    padding: 2px 12px;
+}
+
+.input {
+    margin-bottom: 10px;
+    /*width:100px !important;*/
+}
+
+table {
+    font-size: 14px;
+}
+
+.panel {
+    background-color: #f7f7f7;
+}
+
+#dvLoading {
+    background: #ccc;
+    opacity: 0.5;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    /*margin: -25px 0 0 -25px;*/
+}
+
+#dvLoading img {
+    opacity: 1.0;
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+}
+
+.find {
+    width: 400px !important;
+    background: #003399 !important;
+    color: #fff;
+}
+
+.resumo {
+    width: 400px !important;
+    background: #32CD32 !important;
+    color: #fff;
+}
+
+.autoSum {
+    font-weight: bold;
+}
+
+.bg-selected {
+    background: yellow !important;
+}
+
+/* Estilos para as guias principais (menu) */
+.main-tabs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.main-tabs .tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #ffffff !important;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    line-height: 1; /* garante que o texto não empurre o ícone */
+}
+
+/* Menu rápido container */
+.menu-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 16px;
+}
+
+/* Forcing alignment consistency across both navbar tabs and quick buttons */
+.main-tabs .tab-btn, .menu-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Força largura total */
+    min-height: 44px; /* Altura mínima para todos os botões */
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    text-align: center;
+    transition: all 0.2s ease;
+    margin: 0; /* Remove margens para consistência */
+    border: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+/* Ensure SVG icons align vertically with text and don't inherit line-height issues */
+.quick-icon, svg.quick-icon {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    flex-shrink: 0; /* Previne o ícone de encolher */
+}
+
+.main-tabs .tab-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Ícones dentro das abas do menu principal: fundo branco com cor por tipo */
+.main-tabs .quick-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    padding: 2px 3px; /* reduzir para evitar deslocamento vertical */
+    border-radius: 4px;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.06);
+    margin-right: 8px;
+    color: #6c757d; /* fallback */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+/* Force SVG itself to align and not inherit odd metrics */
+svg.quick-icon { display: inline-block; vertical-align: middle; width: 18px; height: 18px; }
+
+/* Small nudge fallback if certain icons render slightly off - tweak per-case if needed */
+.main-tabs .tab-btn .quick-icon { transform: translateY(0); }
+
+/* Ensure navbar links are strictly centered with icons */
+.main-tabs li > a.tab-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px;
+    line-height: 1 !important;
+}
+
+/* Target specific menu items to neutralize any per-icon offset that may come from SVG drawing */
+.main-tabs a[href="consultaBanco.php"] .quick-icon,
+.main-tabs a[href="consultaDuplicata.php"] .quick-icon,
+.main-tabs a[href="agendaPrevisoes.php"] .quick-icon,
+.main-tabs a[href="relatorioDeCustos.php"] .quick-icon {
+    margin-top: 1px !important;
+    transform: translateY(1px) !important;
+}
+
+/* Small responsive tweak if menu wraps on narrow screens */
+@media (max-width: 768px) {
+    .main-tabs li > a.tab-btn { justify-content: center; }
+}
+
+/* Cores por tipo de aba (ícone) */
+.tab-primary .quick-icon { color: #1a5f9c; }
+.tab-success .quick-icon { color: #27ae60; }
+.tab-warning .quick-icon { color: #d35400; }
+.tab-info .quick-icon    { color: #2980b9; }
+.tab-neutral .quick-icon { color: #6c757d; }
+
+/* Cores por tipo */
+.tab-primary { background: linear-gradient(135deg,#2980b9,#1a5f9c); }
+.tab-success { background: linear-gradient(135deg,#2ecc71,#27ae60); }
+.tab-warning { background: linear-gradient(135deg,#f39c12,#e67e22); }
+.tab-info    { background: linear-gradient(135deg,#5dade2,#3498db); }
+.tab-neutral { background: linear-gradient(135deg,#6c757d,#495057); }
+
+/* Botões especiais do menu rápido */
+.menu-button.menu-purple,
+button.menu-button.menu-purple {
+    background: linear-gradient(135deg, #9b59b6, #8e44ad) !important;
+    color: white !important;
+    border: none !important;
+}
+/* Hover state */
+.menu-button.menu-purple:hover,
+button.menu-button.menu-purple:hover {
+    background: linear-gradient(135deg, #8e44ad, #6c3483) !important;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2) !important;
+}
+
+.main-tabs .tab-btn.active, .main-tabs li.active > a.tab-btn {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    transform: translateY(-3px);
+}
+
+/* Ajuste do navbar para telas pequenas: transforme links em blocos */
+@media (max-width: 768px) {
+    .main-tabs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .main-tabs .tab-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 12px;
+        min-width: 0;
+    }
+}
+
+/* Pequenos ajustes para o navbar padrão do bootstrap */
+.navbar-custom {
+    background: linear-gradient(90deg, rgba(255,255,255,0.95), rgba(245,247,250,0.95));
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.navbar-custom .navbar-toggle {
+    border-color: rgba(0,0,0,0.08);
+}
+
+.navbar-custom .navbar-brand { font-weight:700; color:#2c3e50 !important; }
+
+.menu-button .quick-icon, .main-tabs .quick-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    border-radius: 6px;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 4px;
+    text-align: center;
+    margin-right: 8px;
+    color: rgba(0,0,0,0.85);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+/* Fix for menu button container forms */
+.menu-section form {
+    margin: 0;
+    width: 100%;
+}
+
+/* Garante alinhamento do ícone com o texto nos botões em todo o site */
+.menu-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Em telas pequenas, reduzir levemente para não quebrar o layout */
+@media (max-width: 576px) {
+    .menu-button .quick-icon, .main-tabs .quick-icon {
+        width: 20px;
+        height: 20px;
+        padding: 2px;
+        margin-right: 8px;
+    }
+}
+
+.menu-button[title] { cursor: pointer; }
+
+/* se houver FontAwesome, aumenta um pouco o ícone dentro */
+.menu-button .fa {
+    font-size: 12px;
+    line-height: 1;
+}

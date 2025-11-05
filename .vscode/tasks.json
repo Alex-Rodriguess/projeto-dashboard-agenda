@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "save-backup",
+			"type": "shell",
+			"command": "Copy-Item dashboard.php dashboard.php.bak",
+			"group": "none"
+		}
+	]
+}
