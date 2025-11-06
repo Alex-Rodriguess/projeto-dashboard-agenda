@@ -124,7 +124,7 @@ $previsaoRecebimentos = $recebimentosMes;
             padding: var(--card-padding-desktop);
             border-radius: 12px;
             margin-bottom: var(--card-margin);
-            color: white;
+            color: 
             position: relative;
             overflow: hidden;
             height: 100%;
@@ -142,14 +142,23 @@ $previsaoRecebimentos = $recebimentosMes;
         }
 
         .stat-card .trend {
-            font-size: 0.9em;
+            font-size: 1.2em;
             margin-top: 10px;
             opacity: 0.8;
+            color: #ffffffff;
         }
 
         .stat-card .detail {
-            font-size: 0.8em;
+            font-size: 1.2em;
             margin-top: 5px;
+            color: #ffffffff;
+        }
+
+        .card-titulo {
+            font-size: 2.2em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #f0f3f6ff;
         }
 
         .stat-card.primary { background: linear-gradient(135deg, #1a5f9c, #2980b9); }
@@ -246,6 +255,7 @@ $previsaoRecebimentos = $recebimentosMes;
             font-size: 2em;
             font-weight: bold;
             margin: 10px 0;
+            color: #ffffffff;
         }
 
         /* Altura mínima para gráficos (ajustada para melhor visualização) */
@@ -371,6 +381,7 @@ $previsaoRecebimentos = $recebimentosMes;
             
             .stat-value {
                 font-size: 2.2em;
+                
             }
             
             .chart-title {
@@ -386,7 +397,7 @@ $previsaoRecebimentos = $recebimentosMes;
             <!-- Cards de Estatísticas -->
             <div class="col-md-3">
                 <div class="stat-card primary">
-                    <h3>Saldo Total</h3>
+                    <h3 class="card-titulo">Saldo Total</h3>
                     <h2 id="saldoTotal" class="stat-value">R$ <?php echo number_format($saldoTotal, 2, ',', '.'); ?></h2>
                     <div class="trend">↑ 12% desde o mês anterior</div>
                     <div class="detail">Última atualização: <span id="ultimaAtualizacao"><?php echo date('d/m/Y'); ?></span></div>
@@ -394,7 +405,7 @@ $previsaoRecebimentos = $recebimentosMes;
             </div>
             <div class="col-md-3">
                 <div class="stat-card success">
-                    <h3>Recebimentos</h3>
+                    <h3 class="card-titulo">Recebimentos</h3>
                     <h2 id="recebimentos" class="stat-value">R$ <?php echo number_format($recebimentosMes, 2, ',', '.'); ?></h2>
                     <div class="trend">Previsão mensal: R$ <span id="previsaoRecebimentos"><?php echo number_format($previsaoRecebimentos, 2, ',', '.'); ?></span></div>
                     <div class="detail">Títulos a vencer: <span id="titulosAVencer"><?php echo $titulosPendentes; ?></span></div>
@@ -402,7 +413,7 @@ $previsaoRecebimentos = $recebimentosMes;
             </div>
             <div class="col-md-3">
                 <div class="stat-card warning">
-                    <h3>Pagamentos</h3>
+                    <h3 class="card-titulo">Pagamentos</h3>
                     <h2 id="pagamentos" class="stat-value">R$ <?php echo number_format($pagamentosMes, 2, ',', '.'); ?></h2>
                     <div class="trend">Próximo vencimento: R$ <span id="proximoPagamento">0,00</span></div>
                     <div class="detail">Vence em: <span id="dataProximoPagamento">DD/MM</span></div>
@@ -410,7 +421,7 @@ $previsaoRecebimentos = $recebimentosMes;
             </div>
             <div class="col-md-3">
                 <div class="stat-card danger">
-                    <h3>Títulos Pendentes</h3>
+                    <h3 class="card-titulo">Títulos Pendentes</h3>
                     <h2 id="titulosPendentes" class="stat-value"><?php echo $titulosPendentes; ?></h2>
                     <div class="trend">Total: R$ <span id="valorTitulosPendentes">0,00</span></div>
                     <div class="detail">Vencidos: <span id="titulosVencidos">0</span></div>
@@ -492,7 +503,7 @@ $previsaoRecebimentos = $recebimentosMes;
                         <input type="hidden" name="autofilter" value="1" />
                         <input type="hidden" name="id" value="<?= date('Y-m-d') ?>" />
                         <button type="submit" class="menu-button btn-warning" title="Abrir com filtros automáticos">
-                            <?php echo str_replace('<svg', '<svg class="quick-icon" aria-hidden="true"', @file_get_contents('img/icons/invoice.svg'));?>Agendamento de Provisões
+                            <?php echo str_replace('<svg', '<svg class="quick-icon" aria-hidden="true"', @file_get_contents('img/icons/invoice.svg')); ?>Agendamento de Provisões
                         </button>
                     </form>
 
